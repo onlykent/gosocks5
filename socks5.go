@@ -443,6 +443,7 @@ func ReadRequest(r io.Reader) (*Request, error) {
 	}
 
 	if b[0] != Ver5 {
+		fmt.Printf("bad version: %d, cmd:%d\n", b[0], b[1])
 		return nil, ErrBadVersion
 	}
 
